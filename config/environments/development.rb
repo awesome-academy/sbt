@@ -36,4 +36,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
+  # # Allow connections to local server.
+  # config.hosts.clear
 end
