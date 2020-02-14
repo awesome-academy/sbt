@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_032506) do
+ActiveRecord::Schema.define(version: 2020_01_03_041213) do
 
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
-    t.index ["deleted_at"], name: "index_accounts_on_deleted_at"
   end
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,9 +35,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.string "rated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["account_id"], name: "index_bookings_on_account_id"
-    t.index ["deleted_at"], name: "index_bookings_on_deleted_at"
     t.index ["tour_id"], name: "index_bookings_on_tour_id"
   end
 
@@ -48,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["account_id"], name: "index_comments_on_account_id"
     t.index ["review_id"], name: "index_comments_on_review_id"
   end
@@ -67,7 +61,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.string "path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["tour_id"], name: "index_images_on_tour_id"
   end
 
@@ -77,7 +70,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["account_id"], name: "index_likes_on_account_id"
     t.index ["review_id"], name: "index_likes_on_review_id"
   end
@@ -91,7 +83,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["account_id"], name: "index_ratings_on_account_id"
     t.index ["booking_id"], name: "index_ratings_on_booking_id"
     t.index ["tour_id"], name: "index_ratings_on_tour_id"
@@ -105,7 +96,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["account_id"], name: "index_reviews_on_account_id"
     t.index ["tour_id"], name: "index_reviews_on_tour_id"
   end
@@ -124,11 +114,9 @@ ActiveRecord::Schema.define(version: 2020_01_14_032506) do
     t.datetime "end_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["account_id", "created_at"], name: "index_tours_on_account_id_and_created_at"
     t.index ["account_id"], name: "index_tours_on_account_id"
     t.index ["category_id"], name: "index_tours_on_category_id"
-    t.index ["deleted_at"], name: "index_tours_on_deleted_at"
   end
 
   add_foreign_key "bookings", "accounts"

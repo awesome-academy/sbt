@@ -2,26 +2,36 @@
 @import 'bootstrap';
 @import 'colors';
 
-/*universal*/
+/* universal */
 body {
   padding-top: 60px;
+  min-height:100%;
 }
+footer{
+  width:100%;
+  bottom: 0px;
+  background-color: black;
+  color: white;
 
+}
 section {
   overflow: auto;
 }
-
 textarea {
   resize: vertical;
 }
-
 .center {
   text-align: center;
 }
-
 .center h1 {
   margin-bottom: 10px;
 }
+
+.right{
+  float:right;
+}
+
+html {height:100%}
 
 /* header */
 #logo {
@@ -39,48 +49,83 @@ textarea {
   }
 }
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
 
-/* miscellaneous */
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
 
-/* forms */
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
+/* tours */
+.tour_detail{
+  h1{
+    text-transform: uppercase;
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
+.tours {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .title {
+    display: block;
+    margin:0 auto;
+    float:center;
+    font-size: 25px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .rate {
+    display: block;
+    margin:0 auto;
+    float:center;
+    color: gold;
+    font-size: 20px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .postedby {
+    color: $gray-light;
+    display: block;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
   }
 }
 
-.translation_missing{
-  color: $yellow;
+/* tour detail */
+.tour_detail{
+  .image{
+    height:400px;
+    width:700px;
+    border: 1px solid;
+  }
+}
+
+.image-home{
+  height:300px;
+  width:500px;
+  border: 1px solid;
+}
+
+.margin{
+  margin-left: 15px;
+}
+
+.f30-bold{
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.image-show{
+  width: 720px;
+  height: 400px;
 }

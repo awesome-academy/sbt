@@ -1,0 +1,48 @@
+vi:
+  tour_manage: "Quản lí tour"
+  title: "Tiêu đề: "
+  content: "Nội dung: "
+  postedby: "Người đăng: "
+  start_day: "Ngày bắt đầu: "
+  end_day: "Ngày kết thúc: "
+  price: "Giá: "
+  image: "Hình ảnh: "
+  delete: "Xóa"
+  edit: "Chỉnh sửa"
+  status: "Trạng thái"
+  layouts:
+    header:
+      help: "Trợ giúp"
+      login: "Đăng nhập"
+      signup: "Đăng ký"
+      account: "Tài khoản"
+      signin: "Đăng ký"
+    application:
+      title: "VI "
+      home: "Trang chủ"
+      vi: "Tiếng Việt"
+      en: "English"
+  hello: "Xin chào"
+  static_pages:
+    home:
+      title: "Trang chủ"
+      home: "Trang chủ"
+      welcome: "Chào mừng đén với Booking tour APP"
+    help:
+  base:
+    title: "Booking App vi"
+  tours:
+    tour:
+      norate: "Không có đánh giá"
+      postedby: "Đăng bởi "
+    new:
+      tour_add: "Đăng Tour"
+  sessions:
+    index:
+      login: "Đăng nhập"
+      email: "Email "
+      password: "Mật khẩu"
+      newaccount: "Tạo mới "
+      signin: "tại đây"
+      remember: "Lưu tài khoản"
+      forgot: "Quên mật khẩu?"

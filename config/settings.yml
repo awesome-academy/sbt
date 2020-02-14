@@ -6,3 +6,4 @@ email_in_users_max: 50
 password_min: 8
 size:
   page: 10
+password_min: 6

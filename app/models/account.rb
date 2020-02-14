@@ -9,7 +9,6 @@ class Account < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :ratings, dependent: :destroy
 
   validates :name, presence: true,
     length: {maximum: Settings.name_in_users_max}
@@ -20,7 +19,6 @@ class Account < ApplicationRecord
   validates :phone_number, format: {with: VALID_PHONE_REGEX}, allow_blank: true
   has_secure_password
   validates :password, presence: true, length:
-    # {minimum: Settings.password_min}, allow_nil: true, , on: :reset_password
     {minimum: Settings.password_min}, allow_nil: true
   validates :password, presence: true, length:
     {minimum: Settings.password_min}, on: :reset_password
